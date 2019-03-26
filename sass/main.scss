@@ -1,5 +1,42 @@
-$color-primary: hotpink;
+$color-primary: white;
+
+* {
+  margin: 0;
+  padding: 0;
+  // when set to border-box, the width of the margin and the padding is not included in the entire width of an element
+  box-sizing: border-box;
+}
 
 body {
   background-color: $color-primary;
+  // since our index.html has added link to google fonts, Lato font will be downloaded, fall back font will sans-serif
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  // font color
+  color: #777;
+  // sets the verticle space between the lines
+  line-height: 1.7;
+  padding: 20px;
+}
+
+.header {
+  background-image:
+    linear-gradient(to right bottom,
+      rgba(58, 129, 58, 0.7),
+      rgba(118, 202, 125, 0.7)),
+    url('../img/hero.jpg');
+
+  // take 90% of available viewport height
+  height: 90vh;
+
+  // maintain aspect ratio of the background img. Without this prop, the background image
+  // will be chopped off as screen gets smaller.
+  background-size:cover; 
+
+  // not entirely sure what this does. anchors to the top?
+  background-position: top;
+
+  // to create the slanted edge 
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
