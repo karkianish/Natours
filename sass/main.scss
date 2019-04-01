@@ -27,6 +27,9 @@ body {
       rgba(118, 202, 125, 0.7)),
     url('../img/hero.jpg');
 
+  // this is required so that child element's position prop could be set to absolute
+  position: relative;
+
   // take 90% of available viewport height
   height: 90vh;
 
@@ -39,4 +42,41 @@ body {
 
   // to create the slanted edge 
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.page-title-box {
+  color: white;
+  text-transform: uppercase;
+
+  // without setting position property to absolute, you cannot set top bottom property. The value has to be 'absolute' to set top left.
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.page-title-main {
+  display: block;
+  font-size: 60px;
+  // for the font-weight to work, be sure to use the value that has been imported using google fonts
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.page-title-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.5px;
 }
